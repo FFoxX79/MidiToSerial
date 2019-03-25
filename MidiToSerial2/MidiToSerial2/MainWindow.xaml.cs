@@ -29,7 +29,7 @@ namespace MidiToSerial2
             List<string> ports = SerialPort.GetPortNames().ToList();
             ports.Sort();
 
-            _serialPort = _serialPort = new SerialPort(ports.Last(), 38400, Parity.None, 8, StopBits.One);
+            _serialPort = _serialPort = new SerialPort(ports.Last(), 31250, Parity.None, 8, StopBits.One);
             _serialPort.Open();
 
             _midiDevice = Midi.InputDevice.InstalledDevices.First();
